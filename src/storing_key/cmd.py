@@ -88,7 +88,7 @@ def get_secret_from_db(
             if secret_info is not None:
                 hashed_secret = secret_info.hashed_secret
                 secret_hash = SecretHash(passphrase=passphrase)
-                clean_secret = str(secret_hash.get_secret(hashed_secret), 'utf-8')
+                clean_secret = str(secret_hash.get_secret(hashed_secret), "utf-8")
                 print("#- Key: {} - Secret: {}".format(key, clean_secret))
             else:
                 print("#- Key: {} not exist".format(key))
