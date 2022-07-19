@@ -18,7 +18,7 @@ def test_create_delete_secret():
 
     # Add one secret
     key = 'website'
-    secret = 'website'
+    secret = 'website$$2'
     passphrase = 'useThisPassPhrase'
     # check if secret already exist
     if get_secret(db=get_db(), key_name=key) is not None:
@@ -42,3 +42,11 @@ def test_list_secret():
     
     assert 'website' in secrets_list
     assert 'website2' in secrets_list
+
+
+def test_secret_element():
+    username = 'prova'
+    password = 'hahaha23'
+    key = 'website'
+    passphrase = 'useThisPassPhrase'
+    assert get_secret_from_db(username, password, key, passphrase, db=get_db()) == 'website$$2'
