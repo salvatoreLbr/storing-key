@@ -23,9 +23,6 @@ black = "^22.3.0"
 isort = "^5.10.1"
 pytest-cov = "^3.0.0"
 
-[tool.poetry.scripts]
-storing_key = 'storing_key:cli.storing_key'
-
 [build-system]
 requires = ["poetry-core>=1.0.0"]
 build-backend = "poetry.core.masonry.api"

@@ -55,6 +55,13 @@ def create_key(db: Session, key_info: schemas.KeysCreate):
 ######################
 
 
+def get_all_user(db: Session):
+    table = models.Users
+    query_result = db.query(table).all()
+
+    return [qr.username for qr in query_result]
+
+
 def get_user(db: Session, username: str):
     table = models.Users
     query_result = db.query(table).filter(table.username == username).first()

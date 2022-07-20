@@ -32,6 +32,45 @@
 
 <body>
 
+  <div class="container">
+    <div class="row">
+        <div class="col-sm">
+            <a class="nav-link" style="color:#43919B" href="../">
+                <div><i class="fas fa-user"></i></div>
+                <p style="font-size: 14px; margin-bottom: 0; margin-top: 0;" lang="it">Aggiungi utente</p>
+                <p style="font-size: 14px; margin-bottom: 0; margin-top: 0;" lang="en">Add user</p>
+            </a>
+        </div>
+        <div class="col-sm">
+            <a class="nav-link" style="color:#43919B" href="../add_secret">
+                <div><i class="fas fa-key"></i></div>
+                <p style="font-size: 14px; margin-bottom: 0; margin-top: 0;" lang="it">Aggiungi password</p>
+                <p style="font-size: 14px; margin-bottom: 0; margin-top: 0;" lang="en">Add password</p>
+            </a>
+        </div>
+        <div class="col-sm">
+            <a class="nav-link" style="color:#43919B" href="../list_keys">
+                <div><i class="fas fa-bars"></i></div>
+                <p style="font-size: 14px; margin-bottom: 0; margin-top: 0;" lang="it">Mostra chiavi</p>
+                <p style="font-size: 14px; margin-bottom: 0; margin-top: 0;" lang="en">List keys</p>
+            </a>
+        </div>
+        <div class="col-sm">
+            <a class="nav-link" style="color:#43919B" href="../show_key">
+                <div><i class="fas fa-lock-open"></i></div>
+                <p style="font-size: 14px; margin-bottom: 0; margin-top: 0;" lang="it">Mostra password</p>
+                <p style="font-size: 14px; margin-bottom: 0; margin-top: 0;" lang="en">Get password</p>
+            </a>
+        </div>
+        <div class="col-sm">
+          <a class="nav-link" style="color:#43919B" href="../delete_secret">
+              <div><i class="fas fa-trash-alt"></i></div>
+              <p style="font-size: 14px; margin-bottom: 0; margin-top: 0;" lang="it">Cancella chiave</p>
+              <p style="font-size: 14px; margin-bottom: 0; margin-top: 0;" lang="en">Delete key</p>
+          </a>
+      </div>
+    </div>
+
   {% block content %} {% endblock content %}
 
 </body>
