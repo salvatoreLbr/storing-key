@@ -50,6 +50,15 @@ templates = Jinja2Templates(directory=path_str.joinpath("templates"))
 # Home page
 @app.get("/", response_class=HTMLResponse)
 async def home_page_get(
+    request: Request, db: Session = Depends(get_db)
+):
+    return templates.TemplateResponse(
+        "home_page.html", {"request": request}
+    )
+
+# Add user
+@app.get("/add_user", response_class=HTMLResponse)
+async def add_user_get(
     request: Request, type_response: str = "none", db: Session = Depends(get_db)
 ):
     return templates.TemplateResponse(
@@ -101,7 +110,7 @@ async def show_key_get(
 
 ## POST route
 # Home page
-@app.post("/", response_class=HTMLResponse)
+@app.post("/add_user", response_class=HTMLResponse)
 async def create_user_post(
     response: Response,
     registration_form: RegistrationForm = Depends(RegistrationForm.as_form),
@@ -110,7 +119,7 @@ async def create_user_post(
     username = registration_form.username
     if username in get_all_user(db):
         response = RedirectResponse(
-            url="/?type_response=UsernameNonUnivoco", status_code=302
+            url="/add_user?type_response=UsernameNonUnivoco", status_code=302
         )
         return response
     password = registration_form.password
@@ -119,7 +128,7 @@ async def create_user_post(
     create_user(db, user_info)
     print("#- Username {} created".format(username))
     response = RedirectResponse(
-        url="/?type_response=AccountRegistrato", status_code=302
+        url="/add_user?type_response=AccountRegistrato", status_code=302
     )
     return response
 

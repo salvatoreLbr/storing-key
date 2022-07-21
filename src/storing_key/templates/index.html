@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="it" dir="ltr">
+<html dir="ltr">
 
 <head>
   <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <!-- <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=yes"> -->
   <title>Storing Key</title>
 
   <!-- CSS Stylesheets -->
@@ -35,7 +35,7 @@
   <div class="container">
     <div class="row">
         <div class="col-sm">
-            <a class="nav-link" style="color:#43919B" href="../">
+            <a class="nav-link" style="color:#43919B" href="../add_user">
                 <div><i class="fas fa-user"></i></div>
                 <p style="font-size: 14px; margin-bottom: 0; margin-top: 0;" lang="it">Aggiungi utente</p>
                 <p style="font-size: 14px; margin-bottom: 0; margin-top: 0;" lang="en">Add user</p>
@@ -73,9 +73,31 @@
 
   {% block content %} {% endblock content %}
 
+  <div class="bottom-container">
+    <div class="row">
+      <div class="col-sm" style="text-align: left;">
+        <a class="nav-link" style="color:white" href="../"><i class="fas fa-question"></i></a>
+      </div>
+      <div class="col-sm" style="text-align: right;">
+        <button class="btn" id="switch-lang" lang="it" style="color: white;">English</button>
+        <button class="btn" id="switch-lang-it" lang="en" style="color: white;">Italiano</button>
+      </div>
+    </div>
+  </div>
+
 </body>
 
 <script>
+    $('#switch-lang').click(function() {
+      $('[lang="it"]').toggle();
+      $('[lang="en"]').toggle();
+    });
+
+    $('#switch-lang-it').click(function() {
+      $('[lang="it"]').toggle();
+      $('[lang="en"]').toggle();
+    });
+
     // manage language    
     $('[lang="en"]').hide();
 </script>
